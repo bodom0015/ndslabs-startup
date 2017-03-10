@@ -29,13 +29,20 @@ spec:
        - hostPath:
             path: "/home/core/ndslabs/gui/"
          name: src
+       - hostPath:
+            path: "/dev/shm/"
+         name: devshm
       containers:
       - name: ndslabs-webui
+#        image: bodom0015/angular-ui:NDS-725
+#        image: bodom0015/angular-ui:latest
         image: ndslabs/angular-ui:latest
         imagePullPolicy: IfNotPresent
         volumeMounts:
           - name: src
             mountPath: "/home/"
+          - name: devshm
+            mountPath: "/dev/shm/"
         ports:
         - containerPort: 3000
           protocol: TCP

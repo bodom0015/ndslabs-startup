@@ -76,6 +76,7 @@ cat templates/default-ingress.yaml | ./mustache | kubectl create -f-
 kubectl label nodes 127.0.0.1 ndslabs-node-role=compute
 
 cat templates/apiserver.yaml | ./mustache | kubectl create -f-
+#cat templates/apiserver-terra.yaml | ./mustache | kubectl create -f-
 cat templates/webui.yaml | ./mustache | kubectl create -f-
 
 echo ""

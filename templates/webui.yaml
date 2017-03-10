@@ -28,6 +28,7 @@ spec:
       containers:
       - name: ndslabs-webui
         image: ndslabs/angular-ui:latest
+#        image: bodom0015/angular-ui:NDS-510
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
@@ -45,6 +46,10 @@ spec:
             value: ""
           - name: SUPPORT_EMAIL
             value: "{{ SUPPORT_EMAIL }}"
+          - name: GIT_DROPIN_REPO
+            value: ""
+          - name: GIT_DROPIN_BRANCH
+            value: "" 
         readinessProbe:
           httpGet:
             path: /asset/png/favicon-2-32x32.png
